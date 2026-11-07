@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Unterlagen zur Freigabe – Heberling</title>
+<link rel="icon" href="../media/heberling-zeichen.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root {
+  --moor: #1b2c20; --blatt: #94c14a; --gruen-text: #4a6e1c; --lehm-text: #9a4528;
+  --papier: #faf6ee; --sand: #f2ecdf; --sand-2: #e7ddca; --tinte: #2b2318; --tinte-leise: #5d564b; --rand: #8a7f6c;
+  --salbei-blass: #d5d6ca;
+  --slab: "Zilla Slab", Rockwell, Georgia, serif; --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --seitenrand: clamp(20px, 5vw, 56px);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--papier); color: var(--tinte); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--slab); font-weight: 400; margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: calc(1080px + 2 * var(--seitenrand)); margin-inline: auto; padding-left: max(var(--seitenrand), env(safe-area-inset-left, 0px)); padding-right: max(var(--seitenrand), env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--slab); font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--lehm-text); }
+:focus-visible { outline: 2px solid var(--gruen-text); outline-offset: 3px; border-radius: 4px; }
+
+header { background: var(--moor); color: var(--papier); }
+header .wrap { padding-block: 22px 56px; display: flex; flex-direction: column; gap: 40px; }
+.logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.logo svg { width: 44px; height: 44px; border-radius: 9.4%; box-shadow: 0 0 0 1px rgba(242,236,223,.15); }
+.logo b { font-family: var(--slab); font-weight: 700; font-size: 24px; line-height: 1; display: block; }
+.logo small { font-family: var(--slab); font-weight: 600; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--salbei-blass); }
+header h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.05; }
+header p { color: var(--salbei-blass); max-width: 60ch; font-size: 18px; margin-top: 14px; }
+header .eyebrow { color: var(--blatt); }
+.inhalt { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.inhalt a { color: var(--papier); text-decoration: none; padding: 8px 16px; border-radius: 999px; border: 1.5px solid rgba(250,246,238,.35); font-weight: 600; font-size: 15px; }
+.inhalt a:hover { border-color: var(--blatt); color: var(--blatt); }
+
+section { padding-block: clamp(56px, 8vw, 96px); }
+section + section { border-top: 1px solid var(--sand-2); }
+.kopf { display: flex; flex-direction: column; gap: 12px; max-width: 720px; margin-bottom: 40px; }
+.kopf h2 { font-size: clamp(30px, 3.6vw, 42px); line-height: 1.1; }
+.kopf p { color: var(--tinte-leise); }
+
+.karten { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.karte { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.karte figure { margin: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 4px rgba(46,43,37,.12), 0 16px 36px rgba(46,43,37,.16); transition: transform .4s cubic-bezier(.2,0,0,1); }
+.karte figure:hover { transform: translateY(-4px) rotate(-.4deg); }
+.karte span { font-size: 14px; color: var(--tinte-leise); text-align: center; }
+@media (max-width: 760px) { .karten { grid-template-columns: 1fr; } }
+
+.daten { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; }
+.datum { background: var(--sand); border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; }
+.datum b { font-family: var(--slab); font-weight: 600; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--tinte-leise); }
+.hinweis { margin-top: 24px; background: #edeee7; color: #262d26; border-radius: 16px; padding: 18px 22px; font-size: 16px; max-width: 820px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 24px; border-radius: 999px; border: 1.5px solid transparent; font: 600 16px/1.2 var(--sans); text-decoration: none; cursor: pointer; background: var(--moor); color: var(--papier); transition: background-color .16s; }
+.btn:hover { background: #2a4231; }
+.btn--zweit { background: transparent; color: var(--tinte); border-color: var(--rand); }
+.btn--zweit:hover { background: var(--sand); }
+.btn svg { width: 18px; height: 18px; }
+.aktionen { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; align-items: center; }
+.status { font-size: 15px; color: var(--gruen-text); font-weight: 600; }
+
+.sig-rahmen { background: #fff; border-radius: 16px; box-shadow: 0 0 0 1px var(--sand-2), 0 12px 30px rgba(46,43,37,.08); overflow: hidden; }
+.sig-leiste { display: flex; gap: 6px; align-items: center; padding: 12px 18px; background: #f3f1ec; border-bottom: 1px solid var(--sand-2); font-size: 14px; color: var(--tinte-leise); }
+.sig-leiste i { width: 10px; height: 10px; border-radius: 50%; background: #d6d0c3; }
+.sig-leiste span { margin-left: 8px; }
+.sig-body { padding: 28px clamp(18px, 4vw, 36px); overflow-x: auto; }
+.sig-gruss { font-family: Calibri, "Segoe UI", Arial, sans-serif; font-size: 15px; color: #443d31; margin-bottom: 18px; line-height: 1.5; }
+
+.schritte { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 40px; }
+.schritt { background: var(--sand); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.schritt h3 { font-size: 20px; font-weight: 600; }
+.schritt ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15.5px; color: var(--tinte-leise); }
+
+footer { background: var(--moor); color: var(--salbei-blass); font-size: 14px; }
+footer .wrap { padding-block: 28px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--papier); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="logo" viewBox="0 0 1024 1024">
+    <rect width="1024" height="1024" fill="#1b2c20"/>
+    <g fill="#fff">
+      <path d="M217.6,92.2l471.4-4.2c-59,22-87.3,78.8-101.5,124-8,25.3-17.5,59-26.5,122-3,34-5.7,66-8,104-2.4,39.1-1,72-1.5,118.3,1.1,23.4-15.6,40.1-39,40.1H165.3c-50.1,0-80.1-27.8-80.1-74.6v-202.6c0-102.4,45.6-185.9,132.5-227.1Z"/>
+      <path d="M94.9,652.2h447.4c18.9,0,31.2,13.4,31.2,31.2v125.8c0,14.5-11.1,25.6-25.6,25.6H94.9c-18.9,0-31.2-13.4-31.2-31.2v-120.2c0-17.8,12.2-31.2,31.2-31.2Z"/>
+      <path d="M79.5,814.8h70.1v95.7c0,25.6-15.6,42.3-35.6,42.3s-34.5-16.7-34.5-42.3v-95.7Z"/>
+      <path d="M213.7,796.9h67.9v105.7c0,26.7-15.6,42.3-34.5,42.3s-33.4-15.6-33.4-42.3v-105.7Z"/>
+      <path d="M357.3,802.5h69v103.5c0,25.6-15.6,41.2-34.5,41.2s-34.5-15.6-34.5-41.2v-103.5Z"/>
+      <path d="M510.1,805.8h63.3v108c5.8,25.6-9.8,41.2-28.8,41.2s-34.5-15.6-34.5-41.2v-108Z"/>
+    </g>
+    <path fill="#94c14a" d="M591,816c7-171-11-187-13.3-270.6-3.3-132.5,3.3-249.3,40.1-351.7,25.6-67.9,69-104.6,119.1-96.8,53.4,8.9,93.5,50.1,113.5,109.1,26.7-27.8,54.5-53.4,92.4-64.6-23.4,30.1-51.2,60.1-80.1,94.6,23.4,60.1,27.8,122.4,10,178.1-21.1,69-80.1,132.5-136.9,195.9-55.7,60.1-112.4,123.7-144.7,206.1Z"/>
+    <path fill="none" stroke="#1b2c20" stroke-width="14" stroke-linecap="round" d="M618,697c57-278,187-402,225-467"/>
+  </symbol>
+  <symbol id="dl" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></symbol>
+  <symbol id="copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></g></symbol>
+</defs></svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="../"><svg aria-hidden="true"><use href="#logo"/></svg><span><b>Heberling</b><small>Ökologische Baubegleitung</small></span></a>
+    <div>
+      <span class="eyebrow">Zur Freigabe</span>
+      <h1>Visitenkarte &amp; E-Mail-Signatur</h1>
+      <p>Hallo Oliver, hier siehst du die Visitenkarte und deine neue E-Mail-Signatur. Bitte schau dir alles in Ruhe an und gib uns Bescheid, ob wir so in den Druck gehen können.</p>
+      <nav class="inhalt" aria-label="Inhalt"><a href="#visitenkarte">Visitenkarte</a><a href="#signatur">E-Mail-Signatur</a></nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="visitenkarte">
+    <div class="wrap">
+      <div class="kopf">
+        <span class="eyebrow">Visitenkarte</span>
+        <h2>Vorder- und Rückseite</h2>
+        <p>Die Vorschau zeigt die Karte auf naturfarbenem Grund – so ungefähr wirkt sie auf dem Graspapier. Der QR-Code auf der Rückseite speichert deinen Kontakt direkt im Handy. Probier es gerne mit der Handy-Kamera aus.</p>
+      </div>
+      <div class="karten">
+        <div class="karte"><figure><img src="vk-vorderseite.webp" width="1100" height="622" alt="Vorderseite der Visitenkarte mit Logo, Name, Leistung und Kontaktdaten"></figure><span>Vorderseite</span></div>
+        <div class="karte"><figure><img src="vk-rueckseite.webp" width="1100" height="622" alt="Rückseite der Visitenkarte in Moorgrün mit Logo und QR-Code"></figure><span>Rückseite</span></div>
+      </div>
+      <div class="daten">
+        <div class="datum"><b>Format</b>90 × 50 mm, Querformat</div>
+        <div class="datum"><b>Papier</b>FSC-Graspapier mit Hanffaser</div>
+        <div class="datum"><b>Druck</b>beidseitig, vierfarbig</div>
+        <div class="datum"><b>Druckerei</b>Flyeralarm</div>
+      </div>
+      <p class="hinweis">Das Graspapier ist naturfarben und nicht weiß. Die Baggerschaufel im Logo und die hellen Flächen auf der Rückseite zeigen deshalb den Papierton. Die Farben wirken auf dem Papier etwas gedeckter als am Bildschirm.</p>
+      <div class="aktionen">
+        <a class="btn btn--zweit" href="Heberling-Visitenkarte-90x50-Flyeralarm.pdf" download><svg aria-hidden="true"><use href="#dl"/></svg>Druckdatei (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="signatur">
+    <div class="wrap">
+      <div class="kopf">
+        <span class="eyebrow">E-Mail-Signatur</span>
+        <h2>So sieht deine Signatur aus</h2>
+        <p>Mit einem Klick auf „Signatur kopieren“ ist sie in der Zwischenablage. Danach fügst du sie in Outlook ein – die Schritte stehen darunter.</p>
+      </div>
+      <div class="sig-rahmen">
+        <div class="sig-leiste"><i></i><i></i><i></i><span>Neue E-Mail</span></div>
+        <div class="sig-body">
+          <p class="sig-gruss">Mit freundlichen Grüßen<br>Oliver Heberling</p>
+          <div id="signaturInhalt">
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Calibri,'Segoe UI',Arial,sans-serif;color:#443d31;">
+  <tr><td colspan="2" style="padding:0 0 14px 0;border-bottom:2px solid #94c14a;font-size:1px;line-height:1px;">&nbsp;</td></tr>
+  <tr>
+    <td valign="top" style="padding:14px 14px 0 0;width:56px;"><img src="heberling-logo-signatur.png" width="56" height="56" alt="Heberling Logo" style="display:block;width:56px;height:56px;border:0;"></td>
+    <td valign="top" style="padding:12px 0 0 0;">
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:22px;font-weight:bold;color:#2b2318;">Mag. Oliver Heberling</div>
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:11px;line-height:16px;letter-spacing:1px;text-transform:uppercase;color:#454e42;padding-top:2px;">Diplombiologe &amp; Landschaftsbau</div>
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:14px;line-height:20px;font-weight:bold;color:#7e3521;padding-top:6px;">Ökologische Baubegleitung &amp; Bauaufsicht</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding:12px 0 0 0;font-size:13px;line-height:20px;color:#443d31;">
+      Aubergstraße 20 · 5161 Elixhausen, Österreich<br>
+      <a href="tel:+436602656567" style="color:#443d31;text-decoration:none;">+43 660 265 65 67</a> · <a href="mailto:info@baubegleitung-heberling.eu" style="color:#4a6e1c;text-decoration:none;">info@baubegleitung-heberling.eu</a><br>
+      <a href="https://www.baubegleitung-heberling.eu" style="color:#4a6e1c;text-decoration:none;font-weight:bold;">www.baubegleitung-heberling.eu</a>
+    </td>
+  </tr>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="aktionen">
+        <button class="btn" type="button" id="kopieren"><svg aria-hidden="true"><use href="#copy"/></svg>Signatur kopieren</button>
+        <a class="btn btn--zweit" href="heberling-signatur.html" download><svg aria-hidden="true"><use href="#dl"/></svg>Als HTML-Datei</a>
+        <span class="status" id="status" role="status" aria-live="polite"></span>
+      </div>
+      <div class="schritte">
+        <div class="schritt"><h3>Neues Outlook &amp; Outlook im Web</h3><ol><li>Zahnrad (Einstellungen) öffnen</li><li>Konten › Signaturen › „Neue Signatur“</li><li>Ins leere Feld klicken, Strg + V</li><li>Namen vergeben, als Standard wählen, speichern</li></ol></div>
+        <div class="schritt"><h3>Klassisches Outlook (Windows)</h3><ol><li>Datei › Optionen › E-Mail</li><li>„Signaturen…“ › „Neu“</li><li>Ins Bearbeitungsfeld klicken, Strg + V</li><li>Bei „Neue Nachrichten“ und „Antworten“ auswählen, OK</li></ol></div>
+        <div class="schritt"><h3>Outlook für Mac</h3><ol><li>Outlook › Einstellungen › Signaturen</li><li>Auf „+“ klicken</li><li>Ins Feld klicken, Cmd + V</li><li>Unter „Standardsignatur“ zuweisen</li></ol></div>
+      </div>
+      <p class="hinweis">Am besten danach eine Test-E-Mail an dich selbst schicken. In der Outlook-App am Handy geht nur eine reine Textsignatur – dort einfach Name, Telefon und E-Mail eintragen.</p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>Diese Seite ist nur für Mag. Oliver Heberling bestimmt.</span><a href="../">Zur Website</a></div></footer>
+
+<script>
+(() => {
+  const btn = document.getElementById('kopieren');
+  const status = document.getElementById('status');
+  const quelle = document.getElementById('signaturInhalt');
+  const melde = t => { status.textContent = t; clearTimeout(melde.t); melde.t = setTimeout(() => status.textContent = '', 6000); };
+  btn.addEventListener('click', async () => {
+    const klon = quelle.cloneNode(true);
+    klon.querySelectorAll('img').forEach(i => i.setAttribute('src', new URL(i.getAttribute('src'), location.href).href));
+    const html = klon.innerHTML.trim();
+    const text = quelle.innerText.trim();
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([text], { type: 'text/plain' }) })]);
+      melde('Kopiert – jetzt in Outlook einfügen.');
+    } catch (e) {
+      const r = document.createRange(); r.selectNodeContents(quelle);
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      const ok = document.execCommand && document.execCommand('copy');
+      melde(ok ? 'Kopiert – jetzt in Outlook einfügen.' : 'Die Signatur ist markiert – bitte mit Strg + C (Mac: Cmd + C) kopieren.');
+    }
+  });
+})();
+</script>
+</body>
+</html>
